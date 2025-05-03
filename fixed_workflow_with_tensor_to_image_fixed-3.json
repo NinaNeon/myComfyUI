@@ -1,0 +1,1625 @@
+{
+  "id": "440beb08-33c7-4cca-912d-de4dec21e985",
+  "revision": 0,
+  "last_node_id": 89,
+  "last_link_id": 206,
+  "nodes": [
+    {
+      "id": 68,
+      "type": "BRIAAI Matting",
+      "pos": [
+        -749.583740234375,
+        579.1707153320312
+      ],
+      "size": [
+        315,
+        150
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video_frames",
+          "type": "IMAGE",
+          "link": 140
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            128
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "slot_index": 1,
+          "links": [
+            129
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BRIAAI Matting"
+      },
+      "widgets_values": [
+        "v1.4",
+        true,
+        "green",
+        4
+      ]
+    },
+    {
+      "id": 73,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        1400,
+        460
+      ],
+      "size": [
+        652.7217407226562,
+        488.5644226074219
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 143
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 144
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [
+        [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_emubc_00043_.png&type=temp&subfolder=&rand=0.7812479291427923"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_emubc_00044_.png&type=temp&subfolder=&rand=0.8477882812683231"
+          }
+        ]
+      ]
+    },
+    {
+      "id": 71,
+      "type": "ImageResizeKJ",
+      "pos": [
+        -768.583740234375,
+        243.1709442138672
+      ],
+      "size": [
+        315,
+        266
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 137
+        },
+        {
+          "name": "get_image_size",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            140
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResizeKJ"
+      },
+      "widgets_values": [
+        512,
+        512,
+        "lanczos",
+        true,
+        2,
+        0
+      ]
+    },
+    {
+      "id": 67,
+      "type": "ImageCompositeAbsolute",
+      "pos": [
+        -442.58349609375,
+        794.1707153320312
+      ],
+      "size": [
+        315,
+        306
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images_a",
+          "type": "IMAGE",
+          "link": 204
+        },
+        {
+          "name": "images_b",
+          "type": "IMAGE",
+          "link": 205
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            131,
+            144,
+            145,
+            1000
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeAbsolute"
+      },
+      "widgets_values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "images_a",
+        "pair"
+      ]
+    },
+    {
+      "id": 70,
+      "type": "GetImageSizeAndCount",
+      "pos": [
+        -1123.583251953125,
+        1004.1707153320312
+      ],
+      "size": [
+        210,
+        86
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 200
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": []
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "slot_index": 1,
+          "links": []
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "slot_index": 2,
+          "links": []
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GetImageSizeAndCount"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 87,
+      "type": "ImageResizeKJ",
+      "pos": [
+        -783.583740234375,
+        822.1707153320312
+      ],
+      "size": [
+        315,
+        266
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 199
+        },
+        {
+          "name": "get_image_size",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            200,
+            201
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResizeKJ"
+      },
+      "widgets_values": [
+        1216,
+        1216,
+        "lanczos",
+        true,
+        2,
+        0
+      ]
+    },
+    {
+      "id": 16,
+      "type": "KSamplerSelect",
+      "pos": [
+        908,
+        608
+      ],
+      "size": [
+        317.27618408203125,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "slot_index": 0,
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "euler"
+      ]
+    },
+    {
+      "id": 25,
+      "type": "RandomNoise",
+      "pos": [
+        908,
+        482
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            37
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        1500,
+        "fixed"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "BasicGuider",
+      "pos": [
+        908,
+        393
+      ],
+      "size": [
+        241.79998779296875,
+        46
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 177
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 142
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "slot_index": 0,
+          "links": [
+            30
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 72,
+      "type": "FluxGuidance",
+      "pos": [
+        908,
+        280
+      ],
+      "size": [
+        317.4000244140625,
+        58
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 141
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            142
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxGuidance"
+      },
+      "widgets_values": [
+        3.5
+      ]
+    },
+    {
+      "id": 31,
+      "type": "CLIPTextEncode",
+      "pos": [
+        908,
+        150
+      ],
+      "size": [
+        298.2829895019531,
+        88
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 44
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 202
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            141
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "MidNi Beneath the soft, muted lighting, a young individual gazes directly into the camera, their expression conveying a sense of contemplation or introspection. The scene, set in a dimly lit indoor environment, features a backdrop of a large window that reveals a blurred exterior filled with natural elements, while multiple screens glow faintly in the shadowy surroundings. With disheveled dark hair falling into their face and dressed casually in a simple white shirt, the subject presents an intimate snapshot, blending a candid moment with an air of mystery. The overall composition, with its emphasis on the subject's face and hands, evokes a dreamy, slightly surreal atmosphere, suggesting a narrative rich in personal reflection or creative endeavor. A hyper-realistic upper-body iPhone selfie of a very handsome Taiwan Aboriginals young man in his early 20s. He has slightly messy black-brown hair, a high, well-defined nose bridge. His face is completely clean-shaven — no stubble, no shadow, and no facial hair — revealing smooth, youthful skin with subtle pores, freckles, and fine skin texture."
+      ]
+    },
+    {
+      "id": 13,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        1400,
+        300
+      ],
+      "size": [
+        355.20001220703125,
+        106
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 37
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 30
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 19
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 20
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 203
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            167
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "slot_index": 1,
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1780,
+        300
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 167
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            143,
+            168
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 17,
+      "type": "BasicScheduler",
+      "pos": [
+        908,
+        709
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 122
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "beta",
+        20,
+        1
+      ]
+    },
+    {
+      "id": 11,
+      "type": "DualCLIPLoader",
+      "pos": [
+        -19.370285034179688,
+        259.9858093261719
+      ],
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 0,
+          "links": [
+            44
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "t5xxl_fp8_e4m3fn.safetensors",
+        "clip_l.safetensors",
+        "flux",
+        "default"
+      ]
+    },
+    {
+      "id": 27,
+      "type": "Image Save",
+      "pos": [
+        2125,
+        106
+      ],
+      "size": [
+        315,
+        626
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 168
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "files",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Save"
+      },
+      "widgets_values": [
+        "D:\\gophoto.co.il\\tutorials\\2024\\comfyui\\flux_IMG2IMG",
+        "ComfyUI",
+        "_",
+        4,
+        "false",
+        "png",
+        300,
+        100,
+        "true",
+        "false",
+        "false",
+        "false",
+        "true",
+        "true",
+        "true"
+      ]
+    },
+    {
+      "id": 69,
+      "type": "PreviewImage",
+      "pos": [
+        -418,
+        382
+      ],
+      "size": [
+        267.8894958496094,
+        306.208740234375
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 145
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 84,
+      "type": "ShowText|pysssss",
+      "pos": [
+        503,
+        445
+      ],
+      "size": [
+        301.8637390136719,
+        194.23951721191406
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 195
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            202
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "MidNi Beneath the soft, muted lighting, a young individual gazes directly into the camera, their expression conveying a sense of contemplation or introspection. The scene, set in a dimly lit indoor environment, features a backdrop of a large window that reveals a blurred exterior filled with natural elements, while multiple screens glow faintly in the shadowy surroundings. With disheveled dark hair falling into their face and dressed casually in a simple white shirt, the subject presents an intimate snapshot, blending a candid moment with an air of mystery. The overall composition, with its emphasis on the subject's face and hands, evokes a dreamy, slightly surreal atmosphere, suggesting a narrative rich in personal reflection or creative endeavor. A hyper-realistic upper-body iPhone selfie of a very handsome Taiwan Aboriginals young man in his early 20s. He has slightly messy black-brown hair, a high, well-defined nose bridge. His face is completely clean-shaven — no stubble, no shadow, and no facial hair — revealing smooth, youthful skin with subtle pores, freckles, and fine skin texture.",
+        "MidNi Beneath the soft, muted lighting, a young individual gazes directly into the camera, their expression conveying a sense of contemplation or introspection. The scene, set in a dimly lit indoor environment, features a backdrop of a large window that reveals a blurred exterior filled with natural elements, while multiple screens glow faintly in the shadowy surroundings. With disheveled dark hair falling into their face and dressed casually in a simple white shirt, the subject presents an intimate snapshot, blending a candid moment with an air of mystery. The overall composition, with its emphasis on the subject's face and hands, evokes a dreamy, slightly surreal atmosphere, suggesting a narrative rich in personal reflection or creative endeavor. A hyper-realistic upper-body iPhone selfie of a very handsome Taiwan Aboriginals young man in his early 20s. He has slightly messy black-brown hair, a high, well-defined nose bridge. His face is completely clean-shaven — no stubble, no shadow, and no facial hair — revealing smooth, youthful skin with subtle pores, freckles, and fine skin texture."
+      ]
+    },
+    {
+      "id": 56,
+      "type": "Text Find and Replace",
+      "pos": [
+        498,
+        181
+      ],
+      "size": [
+        317.4000244140625,
+        166
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 147
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result_text",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            195
+          ]
+        },
+        {
+          "name": "replacement_count_number",
+          "type": "NUMBER",
+          "links": null
+        },
+        {
+          "name": "replacement_count_float",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "replacement_count_int",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text Find and Replace"
+      },
+      "widgets_values": [
+        "The image is",
+        "MidNi"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "UNETLoader",
+      "pos": [
+        -15,
+        136
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            178
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux1-dev-fp8.safetensors",
+        "fp8_e4m3fn"
+      ]
+    },
+    {
+      "id": 82,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1403,
+        135
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            203
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 62,
+      "type": "ModelSamplingFlux",
+      "pos": [
+        908,
+        856
+      ],
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 173
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            122
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingFlux"
+      },
+      "widgets_values": [
+        2.06,
+        0.5,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": 10,
+      "type": "VAELoader",
+      "pos": [
+        -19.370285034179688,
+        414.9858703613281
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 0,
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "vae-ft-mse-840000-ema-pruned.safetensors"
+      ]
+    },
+    {
+      "id": 63,
+      "type": "LoadImage",
+      "pos": [
+        -1123.999755859375,
+        242.2569580078125
+      ],
+      "size": [
+        295.57122802734375,
+        335.0826416015625
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            137,
+            204
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "IMG_7488.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 64,
+      "type": "LoadImage",
+      "pos": [
+        -1123.999755859375,
+        627.2569580078125
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            199,
+            205
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "IMG_7488.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 88,
+      "type": "TensorToRGBImage",
+      "pos": [
+        431.94384765625,
+        847.9158935546875
+      ],
+      "size": [
+        300,
+        80
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "tensor_image",
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1000
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TensorToRGBImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 48,
+      "type": "Florence2Run",
+      "pos": [
+        -54.74606704711914,
+        859.4876098632812
+      ],
+      "size": [
+        400,
+        364
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 131
+        },
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "link": 206
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": []
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "slot_index": 1,
+          "links": []
+        },
+        {
+          "name": "caption",
+          "type": "STRING",
+          "slot_index": 2,
+          "links": [
+            147
+          ]
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Florence2Run"
+      },
+      "widgets_values": [
+        "",
+        "more_detailed_caption",
+        true,
+        false,
+        1024,
+        3,
+        true,
+        "",
+        642905861645243,
+        "randomize"
+      ]
+    },
+    {
+      "id": 49,
+      "type": "DownloadAndLoadFlorence2Model",
+      "pos": [
+        -36,
+        599
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora",
+          "shape": 7,
+          "type": "PEFTLORA",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "links": [
+            82,
+            206
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DownloadAndLoadFlorence2Model"
+      },
+      "widgets_values": [
+        "microsoft/Florence-2-base",
+        "fp16",
+        "sdpa"
+      ]
+    },
+    {
+      "id": 80,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -12,
+        7
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 178
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            173,
+            177
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "Raphael_LoRA-06.safetensors",
+        0.62
+      ]
+    }
+  ],
+  "links": [
+    [
+      12,
+      10,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      19,
+      16,
+      0,
+      13,
+      2,
+      "SAMPLER"
+    ],
+    [
+      20,
+      17,
+      0,
+      13,
+      3,
+      "SIGMAS"
+    ],
+    [
+      30,
+      22,
+      0,
+      13,
+      1,
+      "GUIDER"
+    ],
+    [
+      37,
+      25,
+      0,
+      13,
+      0,
+      "NOISE"
+    ],
+    [
+      44,
+      11,
+      0,
+      31,
+      0,
+      "CLIP"
+    ],
+    [
+      122,
+      62,
+      0,
+      17,
+      0,
+      "MODEL"
+    ],
+    [
+      128,
+      68,
+      0,
+      67,
+      3,
+      "IMAGE"
+    ],
+    [
+      129,
+      68,
+      1,
+      67,
+      4,
+      "MASK"
+    ],
+    [
+      131,
+      67,
+      0,
+      48,
+      0,
+      "IMAGE"
+    ],
+    [
+      137,
+      63,
+      0,
+      71,
+      0,
+      "IMAGE"
+    ],
+    [
+      140,
+      71,
+      0,
+      68,
+      0,
+      "IMAGE"
+    ],
+    [
+      141,
+      31,
+      0,
+      72,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      142,
+      72,
+      0,
+      22,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      143,
+      8,
+      0,
+      73,
+      0,
+      "IMAGE"
+    ],
+    [
+      144,
+      67,
+      0,
+      73,
+      1,
+      "IMAGE"
+    ],
+    [
+      145,
+      67,
+      0,
+      69,
+      0,
+      "IMAGE"
+    ],
+    [
+      147,
+      48,
+      2,
+      56,
+      0,
+      "STRING"
+    ],
+    [
+      167,
+      13,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      168,
+      8,
+      0,
+      27,
+      0,
+      "IMAGE"
+    ],
+    [
+      173,
+      80,
+      0,
+      62,
+      0,
+      "MODEL"
+    ],
+    [
+      177,
+      80,
+      0,
+      22,
+      0,
+      "MODEL"
+    ],
+    [
+      178,
+      12,
+      0,
+      80,
+      0,
+      "MODEL"
+    ],
+    [
+      195,
+      56,
+      0,
+      84,
+      0,
+      "STRING"
+    ],
+    [
+      199,
+      64,
+      0,
+      87,
+      0,
+      "IMAGE"
+    ],
+    [
+      200,
+      87,
+      0,
+      70,
+      0,
+      "IMAGE"
+    ],
+    [
+      201,
+      87,
+      0,
+      67,
+      2,
+      "IMAGE"
+    ],
+    [
+      202,
+      84,
+      0,
+      31,
+      1,
+      "STRING"
+    ],
+    [
+      203,
+      82,
+      0,
+      13,
+      4,
+      "LATENT"
+    ],
+    [
+      204,
+      63,
+      0,
+      67,
+      0,
+      "IMAGE"
+    ],
+    [
+      205,
+      64,
+      0,
+      67,
+      1,
+      "IMAGE"
+    ],
+    [
+      1000,
+      67,
+      0,
+      88,
+      1,
+      "IMAGE"
+    ],
+    [
+      206,
+      49,
+      0,
+      48,
+      1,
+      "FL2MODEL"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Group",
+      "bounding": [
+        -63,
+        520,
+        491,
+        618
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Group",
+      "bounding": [
+        -1147,
+        152,
+        1029,
+        999
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Group",
+      "bounding": [
+        -66,
+        -70,
+        424,
+        562
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Group",
+      "bounding": [
+        475,
+        59,
+        357,
+        595
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "Group",
+      "bounding": [
+        885,
+        65,
+        378,
+        942
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.2633312543060799,
+      "offset": [
+        1677.818860258439,
+        312.3057757902398
+      ]
+    },
+    "frontendVersion": "1.17.11"
+  },
+  "version": 0.4
+}
